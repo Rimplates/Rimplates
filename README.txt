@@ -1,114 +1,76 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://rimplates.com
-Tags: comments, spam
+=== Rimplates ===
+Contributors: nellalink
+Donate link: https://rimplenet.com/donate
+Tags: user-dashboard, admin-dashboard, frontend-dashboard, user-menu, menu, admin, user, profile, templates, dashboard
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tested up to: 5.8.1
+Stable tag: 1.0.0
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Rimplates is a dashboard maker for wordpress. Using this Plugin is simple, install it, Rimplates will appear on your admin dashboard menu (with ability to add / create templates, dashboard ~ it supports both admin dashboard & user dashboard). 
+
+To know how to Use this Plugin: visit [https://rimplenet.com/docs](https://rimplenet.com/docs)
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Rimplates is a dashboard maker for wordpress. Using this Plugin is simple, install it, Rimplates will appear on your admin dashboard menu (with ability to add / create templates, dashboard ~ it supports both admin dashboard & user dashboard). 
 
-A few notes about the sections above:
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+> You might need the [Docs - https://rimplenet.com/docs/](https://rimplenet.com/docs/).
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `rimplates.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+***Download rimplenet-templates.zip
+1. Upload `rimplenet-templates.zip` via ftp or cpanel upload to the folder `/wp-content/plugins/` directory of your wordpress website installation. OR Login to your wordpress admin dashboard and upload the .zip file
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= What are Required to use this Plugin? =
 
-An answer to that question.
+ Install Wordpress on your server, then install this Rimplates Plugin
 
-= What about foo bar? =
+= How do I Create a New Dashboard? =
 
-Answer to foo bar dilemma.
+Click Rimplates on your wordpress admin backend, then click the templates and set the necessary settings
+
+= How do I change Dashboard title & other settings =
+Visit your Wp dashboard , click on Pages , All Pages , Select your proposed page , on the new page, rename / edit page title   
+
+= What shortcode do I use to display my created dashboard =
+
+Use shortcode [rimplenet-template id=ID], Change the ID  to your template ID created in Rimplates PAGE. E.g if your ID is 5 , your valid shortcode will be [rimplenet-template id=5]
+
+= I have Setup Issues or other Questions not included here =
+
+Contact us via Phonecall or Live Chat or Via our Support forum, we answer as soon as possible in few minutes, visit our website at www.rimplenet.com and choose any contact channel suitable for you.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Create New Template called User Dashboard
+2. Create New Template called Admin Dashboard
+3. Settings for your Dashboard
+4. Shortcode Add New Page for your dashboard
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+= 1.0.0 =
+* Launch of Rimplates, Download, Use and Give us Feedback.
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 1.0.0 =
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+* Launch of Rimplates, Download, Use and Give us Feedback.
 
-== Arbitrary section ==
+== FEATURES OF Rimplates ==
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+1. Create Stylish User Dashboard
+2. Create Admin Dashbaord 
+3. Customize dashboard settings, title, footer text etc
+4. Easy User Menu Setup for any created dashboard
+5. It's free and open source
