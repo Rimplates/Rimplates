@@ -51,8 +51,90 @@ class Rimplates_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+        
+        add_shortcode('rimplates-template', array($this, 'RetrieveTemplate'));
+        add_action('wp', array($this, 'LoadTemplateFunctions'));
+        add_action('init', array($this, 'LoadTemplateServiceFunctions'));
+        
 	}
+	
+		
+	public function LoadTemplateFunctions() {
+	    
+        global $post;
+        if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'rimplates-template') ) {
+            
+            $pattern = get_shortcode_regex();
+            preg_match_all('/'. $pattern .'/s', $post->post_content, $matches); 
+            foreach($matches[0] as $match){
+              
+             if(has_shortcode( $match, 'rimplates-template')){
+                 
+                 $atts = shortcode_parse_atts($match);
+                 $template_id = $atts['id']; 
+                 $template_id = str_replace("]","",$template_id);//replace ] with empty string
+                 
+                 $template_folder = get_post_meta($template_id, 'template',true); 
+                 include plugin_dir_path(__FILE__) . "templates/$template_folder/functions.php"; 
+             }
+             
+           }
+           
+        }
+        
+        
+        
+    }
+    
+    public function LoadTemplateServiceFunctions() {
+	    
+        //$template_folder = get_post_meta($template_id, 'template',true); 
+        
+        $template_paths = glob(plugin_dir_path( __FILE__ ) . 'templates/*' , GLOB_ONLYDIR);// Get all folders in that dir templates
+        foreach($template_paths as $template_path){
+            $service_file = $template_path."/services.php";
+            if(file_exists($service_file)){
+                include_once $service_file;
+            }
+        }  
+	  
+    }
+
+
+	public function RetrieveTemplate($atts) {
+	        
+
+	    ob_start();
+	    
+	     global $current_user;
+         wp_get_current_user();
+        
+         $atts = shortcode_atts( array(
+        
+            'id' => 'empty',
+            'user_id' => $current_user->ID,
+        
+         ), $atts);
+         
+        $template_id = $atts['id'];
+        $user_id = $atts['user_id'];
+         if($template_id=='empty'){
+             echo "Specified Template Not Found or No Template was specified, reverting to default..";
+             $template_id = "default";
+         }
+             
+         
+         $template_folder = get_post_meta($template_id, 'template',true);
+           
+	     include plugin_dir_path(__FILE__) . "templates/$template_folder/index.php";  
+        
+
+	    $output = ob_get_clean();
+
+	    return $output;
+	  
+    }
+
 
 	/**
 	 * Register the stylesheets for the public-facing side of the site.

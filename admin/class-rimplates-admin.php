@@ -52,6 +52,14 @@ class Rimplates_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		/**
+		 * The class responsible for Setting Admin Menu
+		 * core plugin.
+		 */
+		include_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/class-admin-sidebar-menu-settings.php';
+		
+		//Include class-file to displays Template Settings as Metabox 
+		include_once plugin_dir_path( dirname( __FILE__ ) ) . '/admin/class-admin-template-settings.php';
 	}
 
 	/**

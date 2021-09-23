@@ -110,6 +110,19 @@ class Rimplates {
 		 * of the plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rimplates-i18n.php';
+		
+		/**
+		 * The class responsible for Registering Custom Post Type
+		 * core plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cpt.php'; 
+		
+	    /**
+		 * The class responsible for loading page templates
+		 * core plugin.
+		 */
+		 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/page-templates/class-init-page-template.php';
+	    
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
