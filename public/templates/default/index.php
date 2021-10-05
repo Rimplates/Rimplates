@@ -18,7 +18,7 @@ global $current_user, $wp;
     </script>
    
 
-
+<div class="rimplates">
     <div class="se-pre-con"></div>
     <div class="wrapper">
 
@@ -53,3 +53,4 @@ global $current_user, $wp;
             <!--// Copyright -->
         </div>
     </div>
+</div>
