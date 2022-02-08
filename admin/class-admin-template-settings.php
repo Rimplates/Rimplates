@@ -26,8 +26,8 @@ class Rimplenet_Admin_Template_Settings{
     
     function rimplates_template_register_meta_box() {
         
-        add_meta_box( 'rimplenet-admin-wallet-settings-meta-box', esc_html__( 'Wallet Settings', 'rimplenet' ),   array($this,'rimplenet_admin_wallet_meta_box_callback'), 'rimplates', 'normal', 'high' );
-        add_meta_box( 'rimplenet-admin-wallet-balance-shortcode-meta-box', esc_html__( 'Wallet Balance Shortcode', 'rimplenet' ),   array($this,'rimplenet_admin_wallet_balance_shortcode_meta_box_callback'), 'rimplates', 'side', 'high' );  
+        add_meta_box( 'rimplenet-admin-wallet-settings-meta-box', esc_html__( 'Templates Settings', 'rimplates' ),   array($this,'rimplenet_admin_wallet_meta_box_callback'), 'rimplates', 'normal', 'high' );
+        add_meta_box( 'rimplenet-admin-wallet-balance-shortcode-meta-box', esc_html__( 'Template Shortcode', 'rimplates' ),   array($this,'rimplenet_admin_wallet_balance_shortcode_meta_box_callback'), 'rimplates', 'side', 'high' );  
         
     }
     
@@ -54,43 +54,18 @@ class Rimplenet_Admin_Template_Settings{
      
     function save_settings($post_id, $post, $update){
         
-      $rimplenettransaction_type = sanitize_text_field($_POST['rimplenettransaction_type']);
-      if(empty($rimplenettransaction_type) OR $rimplenettransaction_type=="rimplenet-wallets"){ 
-        $WALLET_CAT_NAME = 'RIMPLENET WALLETS';
-        wp_set_object_terms($post_id, $WALLET_CAT_NAME, 'rimplenettransaction_type');
+      $rimplates_template = sanitize_text_field($_POST['rimplates_template']);
+      if(empty($rimplates_template)){ 
+        //$WALLET_CAT_NAME = 'RIMPLENET WALLETS';
+        //wp_set_object_terms($post_id, $WALLET_CAT_NAME, 'rimplenettransaction_type');
         
-        $rimplenet_wallet_name = get_the_title();
-        $rimplenet_wallet_decimal = sanitize_text_field( $_POST['rimplenet_wallet_decimal'] );
-        $rimplenet_min_withdrawal_amount = sanitize_text_field( $_POST['rimplenet_min_withdrawal_amount'] );
-        $rimplenet_max_withdrawal_amount = sanitize_text_field( $_POST['rimplenet_max_withdrawal_amount'] );
-        $rimplenet_wallet_symbol = sanitize_text_field( $_POST['rimplenet_wallet_symbol'] );
-        $rimplenet_wallet_symbol_position = sanitize_text_field( $_POST['rimplenet_wallet_symbol_position'] );
-        $include_in_withdrawal_form = sanitize_text_field( $_POST['include_in_withdrawal_form'] );
-        $include_in_woocommerce_currency_list = sanitize_text_field( $_POST['include_in_woocommerce_currency_list'] );
-        $enable_as_woocommerce_product_payment_wallet = sanitize_text_field( $_POST['enable_as_woocommerce_product_payment_wallet'] );
-        $rimplenet_wallet_id = sanitize_text_field( $_POST['rimplenet_wallet_id'] );
-        $rimplenet_wallet_type = sanitize_text_field( $_POST['rimplenet_wallet_type'] );
-        $rimplenet_wallet_note = sanitize_text_field( $_POST['rimplenet_wallet_note'] );
+        $template = sanitize_text_field( $_POST['rimplates_template'] );
+       
         
         
         $metas = array( 
-              'rimplenet_wallet_name' => $rimplenet_wallet_name,
-              'rimplenet_wallet_decimal' => $rimplenet_wallet_decimal,
-              'rimplenet_min_withdrawal_amount' => $rimplenet_min_withdrawal_amount,
-              'rimplenet_max_withdrawal_amount' => $rimplenet_max_withdrawal_amount,
-              'rimplenet_wallet_symbol' => $rimplenet_wallet_symbol,
-              'rimplenet_wallet_symbol_position' => $rimplenet_wallet_symbol_position,
-              'rimplenet_wallet_id' => strtolower($rimplenet_wallet_id),
-              'include_in_woocommerce_currency_list' => $include_in_woocommerce_currency_list,
-              'enable_as_woocommerce_product_payment_wallet' => $enable_as_woocommerce_product_payment_wallet,
-              'rimplenet_wallet_type' => $rimplenet_wallet_type,
-              'rimplenet_wallet_note' => $rimplenet_wallet_note,
-              
-              'rimplenettransaction_type' => 'rimplenet-wallets',
-            
-              'rimplenet_rules_before_wallet_withdrawal' => $rimplenet_rules_before_wallet_withdrawal,
-              'rimplenet_rules_after_wallet_withdrawal' => $rimplenet_rules_after_wallet_withdrawal,
-            );
+              'template' => $template,
+             );
             
          foreach ($metas as $key => $value) {
           update_post_meta($post_id, $key, $value);

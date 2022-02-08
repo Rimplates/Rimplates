@@ -21,13 +21,13 @@
     
                <tr>
                 <th>
-                 <label for="rimplates_template_default"> 
+                 <label for="rimplates_template"> 
                      Template 
                      <span class="dashicons dashicons-editor-help rimplates-admin-tooltip" title="Template"></span>
                  </label>
                 </th>
                 <td>
-                   <select name="rimplates_template_default" id="rimplates_template_default" style="width: 100%;max-width: 400px; height: 40px;" required>
+                   <select name="rimplates_template" id="rimplates_template" style="width: 100%;max-width: 400px; height: 40px;" required>
                          <option selected="selected" value="default"> Default </option> 
                       </select>
                 </td>
@@ -81,7 +81,7 @@
                     $menu_slugs = wp_list_pluck($nav_menus, 'slug');
 
                    ?>
-                      <select name="rimplates_sidebar_menu" id="rimplates_sidebar_menu_template" style="width: 100%;max-width: 400px; height: 40px;" required>
+                      <select name="rimplates_sidebar_menu" id="rimplates_sidebar_menu_template" style="width: 100%;max-width: 400px; height: 40px;">
                         <option value=""> Choose one menu </option>
                         <?php foreach ($nav_menus as $key => $value) { ?>
                             <option <?php selected( $sidebar_menu, $menu_slugs[$key] ); ?> value="<?= $menu_slugs[$key]; ?>"><?= $menu_names[$key]; ?></option>
