@@ -3,7 +3,7 @@
     wp_get_current_user();
     //available tag $template_id, $user_id;
     $sidebar_mode = get_post_meta($template_id,"sidebar-mode",true);
-    $viewed_url = add_query_arg($_SERVER['QUERY_STRING'], '', home_url($wp->request ));
+    $viewed_url = add_query_arg($_SERVER['QUERY_STRING'], '', home_url($wp->request));
     
     
     $sidebar_menu = get_post_meta($template_id,"sidebar-menu",true);
@@ -23,9 +23,9 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <h1>
-                <a href="<?php echo get_permalink(); ?>"><?php echo $dashboard_title; ?></a>
+                <a href="<?php echo esc_url(__(get_permalink(), 'rimplates')); ?>"><?php echo esc_html(__($dashboard_title, 'rimplates'));  ?></a>
             </h1>
-            <span><?php echo $dashboard_small_title; ?></span>
+            <span><?php echo esc_html(__($dashboard_small_title, 'rimplates')); ?></span>
         </div>
         <div class="profile-bg"></div>
          <ul class="list-unstyled components">
@@ -78,21 +78,21 @@
                     if($child_counter>1){ //if has children, open tag <li> and <a with class dropdown ot be closed in COUNTER REDUCTION FXN
                          ?>
                          
-                        <li class="<?php echo $active_menu_disp ?>">
-                            <a href="#Dropdown<?php echo $menu->ID; ?>" data-toggle="collapse" aria-expanded="false"  target="<?php echo $menu->target; ?>">
+                        <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
+                            <a href="#Dropdown<?php echo esc_attr(__($menu->ID, 'rimplates')); ?>" data-toggle="collapse" aria-expanded="false"  target="<?php  echo esc_attr(__($menu->target, 'rimplates')); ?>">
                                            
-                               <?php echo  $icon_disp; ?> <?php echo $menu->title; ?> 
+                               <?php echo esc_html(__($icon_disp, 'rimplates'));  ?> <?php echo esc_html(__($menu->title, 'rimplates'));?> 
                                 <i class="fas fa-angle-down fa-pull-right"></i>
                             </a>
-                            <ul class="collapse list-unstyled" id="Dropdown<?php echo $menu->ID; ?>" >
+                            <ul class="collapse list-unstyled" id="Dropdown<?php echo esc_attr(__($menu->ID, 'rimplates')); ?>" >
                          <?php
                             }
                             else{
                              ?>
-                            <li class="<?php echo $active_menu_disp ?>">
-                                <a href="<?php echo $menu_item_link; ?>" target="<?php echo $menu->target; ?>">
+                            <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
+                                <a href="<?php echo esc_url(__($menu_item_link, 'rimplates')); ?>" target="<?php echo esc_attr(__($menu->target, 'rimplates')); ?>">
                                     
-                                   <?php echo  $icon_disp; ?> <?php echo $menu->title; ?> 
+                                   <?php echo esc_html(__($icon_disp, 'rimplates')); ?> <?php echo esc_html(__($menu->title, 'rimplates')); ?> 
                                 </a>
                             </li>
                         
@@ -103,10 +103,10 @@
                   
                ?>
                    
-                   <li class="<?php echo $active_menu_disp ?>">
-                        <a href="<?php echo $menu_item_link; ?>" target="<?php echo $menu->target; ?>">
+                   <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
+                        <a href="<?php echo esc_url(__($menu_item_link, 'rimplates')); ?>" target="<?php echo esc_attr(__($menu->target, 'rimplates')); ?>">
                            
-                           <?php echo  $icon_disp; ?> <?php echo $menu->title; ?>  
+                           <?php echo esc_html(__($icon_disp, 'rimplates')); ?> <?php echo esc_html(__($menu->title, 'rimplates')); ?>  
                            
                         </a>
                     </li>
