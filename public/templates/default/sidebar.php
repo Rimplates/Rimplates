@@ -6,12 +6,12 @@
     $viewed_url = add_query_arg($_SERVER['QUERY_STRING'], '', home_url($wp->request));
     
     
-    $sidebar_menu = get_post_meta($template_id,"sidebar-menu",true);
+    $sidebar_menu = get_post_meta($template_id,"sidebar_menu",true);
     
     
     $dashboard_title = get_post_meta($template_id,"title",true);
     if(empty($dashboard_title)){ $dashboard_title = get_the_title($template_id); }
-    $dashboard_small_title = get_post_meta($template_id,"small-title",true);
+    $dashboard_small_title = get_post_meta($template_id,"small_title",true);
     if(empty($dashboard_small_title)){ $dashboard_small_title = "---"; }
     
     $dashboard_logo = get_post_meta($template_id,"dashboard-logo",true);

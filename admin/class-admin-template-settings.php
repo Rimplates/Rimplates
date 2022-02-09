@@ -71,11 +71,11 @@ class Rimplenet_Admin_Template_Settings{
         
         $metas = array( 
               'template' => $template,
-              'rimplates_small_title' => $rimplates_small_title,
-              'rimplates_sidebar_menu' => $rimplates_sidebar_menu,
+              'title' => $rimplates_template_header_text,
+              'small_title' => $rimplates_small_title,
+              'sidebar_menu' => $rimplates_sidebar_menu,
               'rimplates_default_post' => $rimplates_default_post,
-              'rimplates_template_header_text' => $rimplates_template_header_text,
-              'rimplates_template_footer_text' => $rimplates_template_footer_text,
+              'footer_copyright_text' => $rimplates_template_footer_text,
              );
             
          foreach ($metas as $key => $value) {

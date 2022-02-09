@@ -3,7 +3,7 @@
     wp_get_current_user();
     $viewed_url = add_query_arg($_SERVER['QUERY_STRING'], '', home_url($wp->request ));
     //available tag $template_id, $user_id;
-    $footer_copyright_text = get_post_meta($template_id,"footer-copyright-text",true);
+    $footer_copyright_text = get_post_meta($template_id,"footer_copyright_text",true);
     if(empty($footer_copyright_text)){ $footer_copyright_text = "© ".get_the_date( 'Y' )." ".get_bloginfo('name').". All Right Reserved"; }
 ?>
 

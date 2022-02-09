@@ -8,7 +8,7 @@
         $rimplates_template_footer = get_post_meta($template_post_id, 'rimplates_template_footer_text', true);
         
         $sidebar_menu = get_post_meta($template_post_id, 'rimplates_sidebar_menu', true);
-        $rimplates_page_id = get_post_meta($template_post_id, 'rimplates_page_id', true);
+        $rimplates_page_id = get_post_meta($template_post_id, 'rimplates_default_post', true);
 
         $rimplates_dashboard_pic = get_post_meta($template_post_id, 'rimplates_dashboard_pic', true);
 
@@ -43,7 +43,7 @@
 
              <tr>
                 <th>
-                 <label for="default-post"> 
+                 <label for="rimplates_default_post"> 
                      Default Page
                      <span class="dashicons dashicons-editor-help rimplates-admin-tooltip" title="Default Page"></span>
                  </label>
@@ -53,7 +53,7 @@
                                 'child_of'              => 0,
                                 'selected'              => isset($rimplates_page_id) ? $rimplates_page_id : 0,
                                 'echo'                  => 1,
-                                'name'                  => 'default-post',
+                                'name'                  => 'rimplates_default_post',
                                 'id'                    => '',
                                 'class'                 => '',
                                 'show_option_none'      => '',
