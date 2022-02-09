@@ -1,13 +1,13 @@
 <?php
         $template_post_id = $meta_id->ID;
-        $template = get_post_meta($template_post_id, 'rimplates_template', true);
+        $template = get_post_meta($template_post_id, 'template', true);
         //$small_title = get_post_meta( $template_post_id, 'small_title', true );
-        $small_title = get_post_meta($template_post_id, 'rimplates_small_title', true);
+        $small_title = get_post_meta($template_post_id, 'small_title', true);
         
         $rimplates_template_header = get_post_meta($template_post_id, 'rimplates_template_header_text', true);
         $rimplates_template_footer = get_post_meta($template_post_id, 'rimplates_template_footer_text', true);
         
-        $sidebar_menu = get_post_meta($template_post_id, 'rimplates_sidebar_menu', true);
+        $sidebar_menu = get_post_meta($template_post_id, 'sidebar_menu', true);
         $rimplates_page_id = get_post_meta($template_post_id, 'rimplates_default_post', true);
 
         $rimplates_dashboard_pic = get_post_meta($template_post_id, 'rimplates_dashboard_pic', true);
