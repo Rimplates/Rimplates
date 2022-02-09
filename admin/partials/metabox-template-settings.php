@@ -43,7 +43,7 @@
 
              <tr>
                 <th>
-                 <label for="default"> 
+                 <label for="default-post"> 
                      Default Page
                      <span class="dashicons dashicons-editor-help rimplates-admin-tooltip" title="Default Page"></span>
                  </label>
@@ -53,7 +53,7 @@
                                 'child_of'              => 0,
                                 'selected'              => isset($rimplates_page_id) ? $rimplates_page_id : 0,
                                 'echo'                  => 1,
-                                'name'                  => 'page_id',
+                                'name'                  => 'default-post',
                                 'id'                    => '',
                                 'class'                 => '',
                                 'show_option_none'      => '',

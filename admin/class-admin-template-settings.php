@@ -55,16 +55,27 @@ class Rimplenet_Admin_Template_Settings{
     function save_settings($post_id, $post, $update){
         
       $rimplates_template = sanitize_text_field($_POST['rimplates_template']);
+
       if(empty($rimplates_template)){ 
         //$WALLET_CAT_NAME = 'RIMPLENET WALLETS';
         //wp_set_object_terms($post_id, $WALLET_CAT_NAME, 'rimplenettransaction_type');
         
         $template = sanitize_text_field( $_POST['rimplates_template'] );
+        $rimplates_small_title = sanitize_text_field( $_POST['rimplates_small_title'] );
+        $rimplates_sidebar_menu = sanitize_text_field( $_POST['rimplates_sidebar_menu'] );
+        $rimplates_default_post = sanitize_text_field( $_POST['rimplates_default_post'] );
+        $rimplates_template_header_text = sanitize_text_field( $_POST['rimplates_template_header_text'] );
+        $rimplates_template_footer_text = sanitize_text_field( $_POST['rimplates_template_footer_text'] );
        
-        
+       
         
         $metas = array( 
               'template' => $template,
+              'rimplates_small_title' => $rimplates_small_title,
+              'rimplates_sidebar_menu' => $rimplates_sidebar_menu,
+              'rimplates_default_post' => $rimplates_default_post,
+              'rimplates_template_header_text' => $rimplates_template_header_text,
+              'rimplates_template_footer_text' => $rimplates_template_footer_text,
              );
             
          foreach ($metas as $key => $value) {
