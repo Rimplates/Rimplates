@@ -26,9 +26,9 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <h1>
-                <a href="<?php echo esc_url(__(get_permalink(), 'rimplates')); ?>"><?php echo esc_html(__($dashboard_title, 'rimplates'));  ?></a>
+                <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html($dashboard_title);  ?></a>
             </h1>
-            <span><?php echo esc_html(__($dashboard_small_title, 'rimplates')); ?></span>
+            <span><?php echo esc_html($dashboard_small_title); ?></span>
         </div>
         <div class="profile-bg"></div>
          <ul class="list-unstyled components">
@@ -81,21 +81,21 @@
                     if($child_counter>1){ //if has children, open tag <li> and <a with class dropdown ot be closed in COUNTER REDUCTION FXN
                          ?>
                          
-                        <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
-                            <a href="#Dropdown<?php echo esc_attr(__($menu->ID, 'rimplates')); ?>" data-toggle="collapse" aria-expanded="false"  target="<?php  echo esc_attr(__($menu->target, 'rimplates')); ?>">
+                        <li class="<?php echo esc_attr($active_menu_disp); ?>">
+                            <a href="#Dropdown<?php echo esc_attr($menu->ID); ?>" data-toggle="collapse" aria-expanded="false"  target="<?php  echo esc_attr($menu->target); ?>">
                                            
-                               <?php echo esc_html(__($icon_disp, 'rimplates'));  ?> <?php echo esc_html(__($menu->title, 'rimplates'));?> 
+                               <?php echo esc_html($icon_disp);  ?> <?php echo esc_html($menu->title);?> 
                                 <i class="fas fa-angle-down fa-pull-right"></i>
                             </a>
-                            <ul class="collapse list-unstyled" id="Dropdown<?php echo esc_attr(__($menu->ID, 'rimplates')); ?>" >
+                            <ul class="collapse list-unstyled" id="Dropdown<?php echo esc_attr($menu->ID); ?>" >
                          <?php
                             }
                             else{
                              ?>
-                            <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
-                                <a href="<?php echo esc_url(__($menu_item_link, 'rimplates')); ?>" target="<?php echo esc_attr(__($menu->target, 'rimplates')); ?>">
+                            <li class="<?php echo esc_attr($active_menu_disp); ?>">
+                                <a href="<?php echo esc_url($menu_item_link); ?>" target="<?php echo esc_attr($menu->target); ?>">
                                     
-                                   <?php echo esc_html(__($icon_disp, 'rimplates')); ?> <?php echo esc_html(__($menu->title, 'rimplates')); ?> 
+                                   <?php echo esc_html($icon_disp); ?> <?php echo esc_html($menu->title); ?> 
                                 </a>
                             </li>
                         
@@ -106,10 +106,10 @@
                   
                ?>
                    
-                   <li class="<?php echo esc_attr(__($active_menu_disp, 'rimplates')); ?>">
-                        <a href="<?php echo esc_url(__($menu_item_link, 'rimplates')); ?>" target="<?php echo esc_attr(__($menu->target, 'rimplates')); ?>">
+                   <li class="<?php echo esc_attr($active_menu_disp); ?>">
+                        <a href="<?php echo esc_url($menu_item_link); ?>" target="<?php echo esc_attr($menu->target); ?>">
                            
-                           <?php echo esc_html(__($icon_disp, 'rimplates')); ?> <?php echo esc_html(__($menu->title, 'rimplates')); ?>  
+                           <?php echo esc_html($icon_disp); ?> <?php echo esc_html($menu->title); ?>  
                            
                         </a>
                     </li>
