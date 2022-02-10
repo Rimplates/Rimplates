@@ -15,8 +15,8 @@
 
     $dashboard_small_title = get_post_meta($template_id,"small_title",true);
     if(empty($dashboard_small_title)){ $dashboard_small_title = "---"; }
-    $dashboard_small_title = substr($dashboard_small_title, 0, 10);
-    
+    $dashboard_small_title = substr($dashboard_small_title, 0, 4);
+
     $dashboard_logo = get_post_meta($template_id,"dashboard-logo",true);
     if(empty($dashboard_logo)){ $dashboard_logo = get_site_icon_url('', ''); }
     
