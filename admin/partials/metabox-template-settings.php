@@ -38,7 +38,7 @@
                      Small Title 
                      <span class="dashicons dashicons-editor-help rimplates-admin-tooltip" title="Small Title"></span>
                 </label></th>
-                <td><input name="rimplates_small_title" id="rimplates_small_title" type="text" value="<?php echo esc_attr($small_title); ?>" placeholder="RNSD" minlength="3" maxlength=4 class="regular-text" required style="width:100%;max-width: 400px; height: 40px;"> </td>
+                <td><input name="rimplates_small_title" id="rimplates_small_title" type="text" value="<?php echo esc_attr($small_title); ?>" placeholder="RNSD" maxlength="4" maxlength=4 class="regular-text" required style="width:100%;max-width: 400px; height: 40px;"> </td>
             </tr>
 
              <tr>
@@ -95,7 +95,7 @@
                      Header Text 
                      <span class="dashicons dashicons-editor-help rimplates-admin-tooltip" title="Header Text"></span>
                 </label></th>
-                <td><input name="rimplates_template_header_text" id="rimplates_template_header_text" type="text" value="<?php echo esc_attr($rimplates_template_header); ?>" placeholder="Header Text" class="regular-text" required style="width:100%;max-width: 400px; height: 40px;"> </td>
+                <td><input name="rimplates_template_header_text" id="rimplates_template_header_text" type="text" value="<?php echo esc_attr($rimplates_template_header); ?>" placeholder="Header Text" class="regular-text" maxlength="10" required style="width:100%;max-width: 400px; height: 40px;"> </td>
             </tr>
 
             <tr>

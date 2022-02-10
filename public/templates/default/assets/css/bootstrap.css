@@ -153,14 +153,14 @@
 }
 
 .rimplates a {
-  color: #007bff;
+  color: inherit;
   text-decoration: none;
   background-color: transparent;
 }
 
 .rimplates a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: none;
 }
 
 .rimplates a:not([href]):not([class]) {
