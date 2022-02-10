@@ -56,7 +56,7 @@ class Rimplenet_Admin_Template_Settings{
         
       $rimplates_template = sanitize_text_field($_POST['rimplates_template']);
 
-      if(empty($rimplates_template)){ 
+      if(!empty($rimplates_template)){ 
         //$WALLET_CAT_NAME = 'RIMPLENET WALLETS';
         //wp_set_object_terms($post_id, $WALLET_CAT_NAME, 'rimplenettransaction_type');
         

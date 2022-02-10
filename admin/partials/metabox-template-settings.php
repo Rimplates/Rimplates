@@ -4,8 +4,8 @@
         //$small_title = get_post_meta( $template_post_id, 'small_title', true );
         $small_title = get_post_meta($template_post_id, 'small_title', true);
         
-        $rimplates_template_header = get_post_meta($template_post_id, 'rimplates_template_header_text', true);
-        $rimplates_template_footer = get_post_meta($template_post_id, 'rimplates_template_footer_text', true);
+        $rimplates_template_header = get_post_meta($template_post_id, 'title', true);
+        $rimplates_template_footer = get_post_meta($template_post_id, 'footer_copyright_text', true);
         
         $sidebar_menu = get_post_meta($template_post_id, 'sidebar_menu', true);
         $rimplates_page_id = get_post_meta($template_post_id, 'rimplates_default_post', true);
