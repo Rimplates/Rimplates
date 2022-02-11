@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Rimplates is a dashboard maker for wordpress. Using this Plugin is simple, install it, Rimplates will appear on your admin dashboard menu (with ability to add / create templates, dashboard ~ it supports both admin dashboard & user dashboard). 
 
-To know how to Use this Plugin: visit [https://rimplenet.com/docs](https://rimplenet.com/docs)
+To know how to Use this Plugin: visit [http://rimplates.tawk.help](http://rimplates.tawk.help)
 
 == Description ==
 
@@ -19,7 +19,7 @@ To know how to Use this Plugin: visit [https://rimplenet.com/docs](https://rimpl
 Rimplates is a dashboard maker for wordpress. Using this Plugin is simple, install it, Rimplates will appear on your admin dashboard menu (with ability to add / create templates, dashboard ~ it supports both admin dashboard & user dashboard). 
 
 
-> You might need the [Docs - https://rimplenet.com/docs/](https://rimplenet.com/docs/).
+> You might need the [Docs - http://rimplates.tawk.help/](http://rimplates.tawk.help/).
 
 == Installation ==
 
@@ -35,18 +35,18 @@ Rimplates is a dashboard maker for wordpress. Using this Plugin is simple, insta
 
 = How do I Create a New Dashboard? =
 
-Click Rimplates on your wordpress admin backend, then click the templates and set the necessary settings
+Click Rimplates on your wordpress admin backend, then click the ADD NEW templates and set the necessary settings
 
 = How do I change Dashboard title & other settings =
 Visit your Wp dashboard , click on Pages , All Pages , Select your proposed page , on the new page, rename / edit page title   
 
 = What shortcode do I use to display my created dashboard =
 
-Use shortcode [rimplenet-template id=ID], Change the ID  to your template ID created in Rimplates PAGE. E.g if your ID is 5 , your valid shortcode will be [rimplenet-template id=5]
+Use shortcode [rimplenet-template id=ID], Change the ID to your template ID created in Rimplates PAGE. E.g if your ID is 5 , your valid shortcode will be [rimplenet-template id=5]
 
 = I have Setup Issues or other Questions not included here =
 
-Contact us via Phonecall or Live Chat or Via our Support forum, we answer as soon as possible in few minutes, visit our website at www.rimplenet.com and choose any contact channel suitable for you.
+Contact us via Phonecall or Live Chat or Via our Support forum, we answer as soon as possible in few minutes, visit our website at http://rimplates.tawk.help/ and choose any contact channel suitable for you.
 
 == Screenshots ==
 
