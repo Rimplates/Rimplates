@@ -135,6 +135,10 @@ class Rimplates {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-rimplates-public.php';
 
+		
+	    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'api/class-base-api.php';
+
+
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/create-users.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/delete-users.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/get-users.php';
