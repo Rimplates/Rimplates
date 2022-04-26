@@ -123,12 +123,6 @@ class Rimplates {
 		 */
 		 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/page-templates/class-init-page-template.php';
 	    
-	    /**
-		 * The class responsible for users and authentication
-		 * core plugin.
-		 */
-		 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/clase-base-users.php';
-	    
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
@@ -140,6 +134,18 @@ class Rimplates {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-rimplates-public.php';
+
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/create-users.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/delete-users.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/get-users.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/login.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/update-users.php';
+
+		new RimplatesCreateUser();
+		new RimplatesDeleteUser();
+		new RimplatesGetUser();
+		new RimplatesLoginUser();
+		new RimplatesUpdateUser();
 
 		$this->loader = new Rimplates_Loader();
 
