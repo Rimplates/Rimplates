@@ -1,7 +1,6 @@
 <?php
-require 'jwt.php';
 
-class Rimplenet_Base_Users_Api {
+class Rimplates_Base_Users_Api {
 
 	private $plugin_name;
 
@@ -24,4 +23,4 @@ class Rimplenet_Base_Users_Api {
 }
 
 
-$Rimplenet_Base_Users_Api = new Rimplenet_Base_Users_Api();
+$Rimplates_Base_Users_Api = new Rimplates_Base_Users_Api();
