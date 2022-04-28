@@ -7,21 +7,30 @@ class RimplatesLoginUser
 
     public function __construct()
     {
-        add_shortcode('rimplates-login-user', array($this, 'login_user'));
+        add_shortcode('rimplates-login-user', array($this, 'login_user_test'));
     }
 
-    public function login_user()
+    public function login_user_test() {
+        ob_start();
+        var_dump($this->login_user("taiwo@gmail.com", "abc123"));
+        return ob_get_clean();
+    }
+
+    public function login_user($user_email, $user_pass)
     {
 
-        $user = $this->validate();
+        $validation = $this->validate($user_email, $user_pass);
 
-        $is_user = wp_authenticate($user['user_email'], $user['user_pass']);
+        $is_user = wp_authenticate($user_email, $user_pass);
+
         
-        if (is_wp_error($is_user)) {
-
+        if (empty($this->validation_error) && is_wp_error($is_user)) {
+            
             $this->validation_error[] = 'Invalid Credential';
         }
-
+        
+        if(!empty($this->validation_error)) return $this->response(400, "failed", "Validation error", [], $this->validation_error);
+        
         if (empty($this->validation_error)) {
 
             unset($is_user->data->user_pass);
@@ -42,27 +51,24 @@ class RimplatesLoginUser
 
             $jwt = JWT::encode($payload);
             
-            return print_r(['access_token' => $jwt]);
+            return $this->response(200, true, "Login successful", ["access_token"=>$jwt], $this->validation_error);
 
         }
 
-        $response['error'] = $this->validation_error;
-
-        return print_r($this->validation_error);
     }
 
-    public function validate()
+    public function validate($user_email, $user_pass)
     {
         $user_email_error = [];
         $user_pass_error = [];
 
-        $user['user_email'] = sanitize_text_field( $_POST['user_email'] );
-	    $user['user_pass'] = sanitize_text_field( $_POST['user_pass'] );
+        $user['user_email'] = sanitize_text_field($user_email);
+	    $user['user_pass'] = $user_pass;
 
         if ($user['user_email'] == '') {
             $user_email_error[] = 'user_email is required';
         }
-        if (!is_email($user['user_email'])) {
+        if ($user['user_email'] && !is_email($user['user_email'])) {
             $user_email_error[] = 'Invalid user_email';
         }
         if (!empty($user_email_error)) {
@@ -76,7 +82,17 @@ class RimplatesLoginUser
             $this->validation_error[] = ['user_pass' => $user_pass_error];
         }
 
-        return $user;
+    }
+
+    public function response($status_code, $status, $response_message, $data=[], $error=[])
+    {
+        return [
+            "status_code" => $status_code,
+            "status" => $status,
+            "response_message" => $response_message,
+            "data" => $data,
+            "error" =>$error
+        ];
     }
     
 }

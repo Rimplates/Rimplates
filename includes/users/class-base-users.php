@@ -1,16 +1,12 @@
 <?php
 
-class Rimplates_Base_Users_Api {
+class Rimplates_Base_Users {
 
-	private $plugin_name;
-
-	private $version;
 
 	public function __construct() {
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
 		$this->load_required_files();
 	}
+
     private function load_required_files() {
    	 //Add Required Files to Load
 	 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'users/create-users.php';
@@ -23,4 +19,4 @@ class Rimplates_Base_Users_Api {
 }
 
 
-$Rimplates_Base_Users_Api = new Rimplates_Base_Users_Api();
+$Rimplates_Base_Users = new Rimplates_Base_Users();

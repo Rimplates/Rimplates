@@ -1,9 +1,7 @@
 <?php
 
- */
 class Rimplates_Api {
 	
-	 */
 	public function __construct() {
 		$this->load_required_files();
 	}

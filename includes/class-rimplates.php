@@ -138,18 +138,7 @@ class Rimplates {
 		
 	    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'api/class-base-api.php';
 
-
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/create-users.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/delete-users.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/get-users.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/login.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/users/update-users.php';
-
-		new RimplatesCreateUser();
-		new RimplatesDeleteUser();
-		new RimplatesGetUser();
-		new RimplatesLoginUser();
-		new RimplatesUpdateUser();
+	    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/users/class-base-users.php';
 
 		$this->loader = new Rimplates_Loader();
 
