@@ -7,62 +7,76 @@ class RimplatesDeleteUser
 
     public function __construct()
     {
-        add_shortcode('rimplates-delete-user', array($this, 'delete_user'));
+        add_shortcode('rimplates-delete-user', array($this, 'delete_user_test'));
     }
 
-    public function delete_user()
-    {
-        global $wpdb;
+    public function delete_user_test() {
+        ob_start();
+        var_dump($this->delete_user(2, 27));
+        return ob_get_clean();
+    }
 
-        $user = $this->validate();
+    public function delete_user($caller_id, $user_id)
+    {
+        // global $wpdb;
+
+        $validation = $this->validate($caller_id, $user_id);
+
+        if(!empty($this->validation_error)) return $this->response(400, "failed", "Validation error", [], $this->validation_error);
 
         if (empty($this->validation_error)) {
 
-            if(!$this->authorization($user['admin_id'])) return 'permission denied';
+            if(!$this->authorization($caller_id)) return $this->response(403, "failed", "Permission denied", [], ["unauthorize"=>"caller_id is not authorize"]);
 
-            $table='wp_users';
-            $deleted = wp_delete_user( $user['user_id'] );
+            // $table='wp_users';
+            $deleted = wp_delete_user($user_id);
 
             if ($deleted) {
-                return 'Successfuly deleted';
+                return $this->response(200, true, "Deleted", [], []);
             }
 
-            return 'User not found';
+            return $this->response(404, "Failed", "User not found", [], []);
 
         }
 
-        return print_r($this->validation_error);
     }
 
-    public function validate()
+    public function validate($caller_id, $user_id)
     {
 
         $user_id_error = [];
-        $admin_id_error = [];
+        $caller_id_error = [];
 
-        $user['admin_id'] = sanitize_text_field( $_GET['admin_id'] );
-        $user['user_id'] = sanitize_text_field( $_GET['user_id'] );
-
-        if ($user['user_id'] == '') {
+        if ($user_id == '') {
             $user_id_error[] = 'user_id is required';
         }
         if (!empty($user_id_error)) {
             $this->validation_error[] = ['user_id' => $user_id_error];
         }
 
-        if ($user['admin_id'] == '') {
-            $admin_id_error[] = 'admin_id is required';
+        if ($caller_id == '') {
+            $caller_id_error[] = 'caller_id is required';
         }
-        if (!empty($admin_id_error)) {
-            $this->validation_error[] = ['admin_id' => $admin_id_error];
+        if (!empty($caller_id_error)) {
+            $this->validation_error[] = ['caller_id' => $caller_id_error];
         }
 
-        return $user;
     }
 
-    public function authorization($user_id)
+    public function response($status_code, $status, $response_message, $data=[], $error=[])
     {
-        $user = get_user_by('ID', $user_id);
+        return [
+            "status_code" => $status_code,
+            "status" => $status,
+            "response_message" => $response_message,
+            "data" => $data,
+            "error" =>$error
+        ];
+    }
+
+    public function authorization($caller_id)
+    {
+        $user = get_user_by('ID', $caller_id);
 
         if (user_can($user, 'administrator')) {
             
